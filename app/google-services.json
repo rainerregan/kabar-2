@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "419601069718",
+    "project_id": "kabar-18c8e",
+    "storage_bucket": "kabar-18c8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419601069718:android:d46b9b6336192592d0f4b7",
+        "android_client_info": {
+          "package_name": "com.merahputih.kabar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419601069718-s0sahepfic69ku7osjm28dkev1lrlg5g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.merahputih.kabar",
+            "certificate_hash": "2bb31813bb3affbc2e7b056e2c29c289b3630eb1"
+          }
+        },
+        {
+          "client_id": "419601069718-9pnggi6qffsb9s383piafeffnohpu6a1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArDataWSKy1Vf5f_XBTZA-EQXL70fU8B4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419601069718-9pnggi6qffsb9s383piafeffnohpu6a1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
