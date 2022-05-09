@@ -23,9 +23,10 @@ public class MainApp extends Application {
         try {
             ChatSDKFirebase.quickStart(this, "pre_1", Constants.MapsSettings.STATIC_MAP_API_KEY, true);
             ChatSDK.config().setLogoDrawableResourceID(R.drawable.kabar_icon_high);
-//            ChatSDK.ui().setLoginActivity(CustomLoginActivity.class);
-//            ChatSDK.ui().setMainActivity(CustomMainAppBarActivity.class);
-//            Log.e("LOGIN ACTIVITY CLASS", ChatSDK.ui().getLoginIntent(this, null).toString());
+
+            // Set Interface Adapter untuk setting custom layout.
+            // Custom layout dapat berupa custom class yang inherit class aslinya.
+            // Override pada adapter akan mengganti layout default.
             ChatSDK.shared().setInterfaceAdapter(new MyAppInterfaceAdapter(getApplicationContext()));
         } catch (Exception e) {
             e.printStackTrace();

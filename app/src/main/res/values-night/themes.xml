@@ -2,5 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.Kabar" parent="ChatSDKTheme">
 
+        <item name="colorPrimary">@color/blue_shade_3</item>
+        <item name="colorPrimaryDark">@color/blue_shade_4</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/blue_shade_1</item>
+
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="fontFamily">@font/poppins</item> <!-- target android sdk versions < 26 and > 14 if theme other than AppCompat -->
     </style>
 </resources>
