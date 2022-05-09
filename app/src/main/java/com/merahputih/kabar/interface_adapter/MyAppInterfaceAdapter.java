@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.merahputih.kabar.custom_activities.CustomLoginActivity;
+import com.merahputih.kabar.custom_activities.CustomPostRegistrationActivity;
 
 import sdk.chat.ui.BaseInterfaceAdapter;
 import sdk.chat.ui.activities.LoginActivity;
@@ -22,5 +23,10 @@ public class MyAppInterfaceAdapter extends BaseInterfaceAdapter {
     @Override
     public Class<? extends Activity> getMainActivity() {
         return MainDrawerActivity.class;
+    }
+
+    @Override
+    public Class<? extends Activity> getPostRegistrationActivity() {
+        return CustomPostRegistrationActivity.class;
     }
 }

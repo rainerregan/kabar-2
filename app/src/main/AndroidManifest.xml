@@ -29,6 +29,11 @@
             android:exported="false">
 
         </activity>
+        <activity
+            android:name=".custom_activities.CustomPostRegistrationActivity"
+            android:exported="false">
+
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
