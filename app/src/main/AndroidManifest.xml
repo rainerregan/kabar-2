@@ -19,6 +19,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".custom_activities.CustomLoginActivity"
+            android:exported="false">
+
+        </activity>
+        <activity
+            android:name=".custom_activities.CustomMainAppBarActivity"
+            android:exported="false">
+
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
