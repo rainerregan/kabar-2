@@ -1,23 +1,20 @@
 package com.merahputih.kabar;
 
 import android.app.Application;
+import android.graphics.drawable.Drawable;
 import android.util.Base64;
 import android.util.Log;
-
-import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.merahputih.kabar.custom_activities.CustomPostRegistrationActivity;
+import com.merahputih.kabar.custom_fragments.CustomScanQrFragment;
 import com.merahputih.kabar.custom_fragments.CustomShowQrFragment;
 import com.merahputih.kabar.interface_adapter.MyAppInterfaceAdapter;
 import com.merahputih.kabar.settings.Constants;
-import com.mikepenz.iconics.IconicsDrawable;
 
 import java.util.concurrent.TimeUnit;
 
-import sdk.chat.app.firebase.ChatSDKFirebase;
-import sdk.chat.core.Tab;
 import sdk.chat.core.interfaces.ChatOption;
 import sdk.chat.core.session.ChatSDK;
 import sdk.chat.firebase.adapter.module.FirebaseModule;
@@ -26,13 +23,6 @@ import sdk.chat.firebase.ui.FirebaseUIModule;
 import sdk.chat.firebase.upload.FirebaseUploadModule;
 import sdk.chat.message.location.LocationChatOption;
 import sdk.chat.message.location.LocationMessageModule;
-import sdk.chat.ui.activities.ChatActivityWrapper;
-import sdk.chat.ui.activities.MainActivity;
-import sdk.chat.ui.activities.MainAppBarActivity;
-import sdk.chat.ui.activities.ProfileActivity;
-import sdk.chat.ui.extras.MainDrawerActivity;
-import sdk.chat.ui.extras.ScanQRCodeActivity;
-import sdk.chat.ui.extras.ShowQRCodeActivity;
 import sdk.chat.ui.fragments.ProfileFragment;
 import sdk.chat.ui.module.UIModule;
 
@@ -112,7 +102,13 @@ public class MainApp extends Application {
         ChatSDK.ui().tabs().get(0).title = "Percakapan";
         ChatSDK.ui().tabs().get(1).title = "Kontak";
 
+        Drawable qrCode = getDrawable(R.drawable.ic_outline_qr_code_24);
+        Drawable qrCodeScanner = getDrawable(R.drawable.ic_outline_qr_code_scanner_24);
 
-        ChatSDK.ui().setTab("Tampilkan QR Code Anda", getDrawable(R.drawable.ic_outline_local_phone_24), new CustomShowQrFragment(), 2);
+        qrCode.setTint(getColor(sdk.chat.app.firebase.R.color.gray_light));
+        qrCodeScanner.setTint(getColor(sdk.chat.app.firebase.R.color.gray_light));
+
+        ChatSDK.ui().setTab("Tampilkan QR Code Anda", qrCode, new CustomShowQrFragment(), 2);
+        ChatSDK.ui().setTab("Pindai QR Code", qrCodeScanner, new CustomScanQrFragment(), 3);
     }
 }

@@ -6,15 +6,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
 import com.merahputih.kabar.R;
+import com.squareup.picasso.Picasso;
 
 import net.glxn.qrgen.android.QRCode;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
+import sdk.chat.core.dao.User;
 import sdk.chat.core.session.ChatSDK;
 import sdk.chat.ui.fragments.BaseFragment;
 
@@ -22,6 +26,16 @@ public class CustomShowQrFragment extends BaseFragment {
 
     @BindView(R.id.imageView)
     protected ImageView imageView;
+
+    @BindView(R.id.profileQRImageView)
+    protected CircleImageView profileQRImageView;
+
+    @BindView(R.id.profileQRName)
+    protected TextView profileQRName;
+
+    @BindView(R.id.profileQRStatus)
+    protected TextView profileQRStatus;
+
     protected String userEntityID;
 
     @Override
@@ -48,8 +62,14 @@ public class CustomShowQrFragment extends BaseFragment {
     @Override
     protected void initViews() {
         try {
-            Bitmap myBitmap = QRCode.from(ChatSDK.currentUser().getEntityID()).bitmap();
+            User user = ChatSDK.currentUser();
+
+            Bitmap myBitmap = QRCode.from(user.getEntityID()).bitmap();
             this.imageView.setImageBitmap(myBitmap);
+
+            Picasso.get().load(user.getAvatarURL()).into(this.profileQRImageView);
+            this.profileQRName.setText(user.getName());
+            this.profileQRStatus.setText(user.getStatus());
         } catch (Exception var2) {
             var2.printStackTrace();
         }
