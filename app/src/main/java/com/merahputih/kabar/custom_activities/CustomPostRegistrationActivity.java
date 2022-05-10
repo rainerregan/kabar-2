@@ -59,6 +59,7 @@ public class CustomPostRegistrationActivity extends PostRegistrationActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.avatarImageView.setImageResource(R.drawable.placeholder_profile);
     }
 
 
