@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.merahputih.kabar.custom_activities.CustomLoginActivity;
 import com.merahputih.kabar.custom_activities.CustomMainAppBarActivity;
 import com.merahputih.kabar.custom_activities.CustomPostRegistrationActivity;
+import com.merahputih.kabar.custom_activities.CustomSplashScreenActivity;
 import com.merahputih.kabar.interface_adapter.MyAppInterfaceAdapter;
 import com.merahputih.kabar.settings.Constants;
 import com.mikepenz.iconics.IconicsDrawable;
@@ -39,6 +40,9 @@ public class MainApp extends Application {
             // Override pada adapter akan mengganti layout default.
             ChatSDK.shared().setInterfaceAdapter(new MyAppInterfaceAdapter(getApplicationContext()));
             ChatSDK.ui().setPostRegistrationActivity(CustomPostRegistrationActivity.class);
+//            ChatSDK.ui().setSplashScreenActivity(CustomSplashScreenActivity.class);
+
+            Log.i("Splash Screen", ChatSDK.ui().getSplashScreenActivity().toString());
 
             setChatOptions();
             setTabsProperties();

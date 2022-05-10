@@ -13,11 +13,6 @@
         <activity
             android:name="sdk.chat.ui.activities.SplashScreenActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".custom_activities.CustomLoginActivity"
@@ -33,6 +28,16 @@
             android:name=".custom_activities.CustomPostRegistrationActivity"
             android:exported="false">
 
+        </activity>
+        <activity
+            android:name=".custom_activities.CustomSplashScreenActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <meta-data
