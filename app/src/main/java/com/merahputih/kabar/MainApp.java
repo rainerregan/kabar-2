@@ -40,9 +40,6 @@ public class MainApp extends Application {
             // Override pada adapter akan mengganti layout default.
             ChatSDK.shared().setInterfaceAdapter(new MyAppInterfaceAdapter(getApplicationContext()));
             ChatSDK.ui().setPostRegistrationActivity(CustomPostRegistrationActivity.class);
-//            ChatSDK.ui().setSplashScreenActivity(CustomSplashScreenActivity.class);
-
-            Log.i("Splash Screen", ChatSDK.ui().getSplashScreenActivity().toString());
 
             setChatOptions();
             setTabsProperties();
