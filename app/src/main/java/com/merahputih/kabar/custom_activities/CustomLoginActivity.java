@@ -41,6 +41,7 @@ public class CustomLoginActivity extends LoginActivity {
                 this.showToast("Email untuk reset password telah dikirim ke email anda.");
             }, (throwable) -> {
                 this.showToast(throwable.getLocalizedMessage());
+                this.dismissProgressDialog();
             }));
         });
         builder.setNegativeButton("Batal", (dialog, which) -> {
